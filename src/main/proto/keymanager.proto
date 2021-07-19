@@ -1,0 +1,108 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "br.com.mateuschacon.keymanager.grpc";
+option java_outer_classname = "Keymanager";
+option objc_class_prefix = "HLW";
+
+package br.com.mateuschacon.keymanager.grpc;
+import "google/protobuf/timestamp.proto";
+
+service KeymanagerRegistraService {
+
+  rpc registra(NovaChavePixRequest) returns (ChavePixResponse) {}
+}
+
+service KeymanagerRemoverService {
+
+  rpc delete(ChavePixExistenteRequest) returns (ChavePixExistenteResponse) {}
+}
+
+service KeymanagerDetalhamentoService {
+
+  rpc detalha(ChavePixDetalhesRequest) returns (ChavePixDetalhesResponse) {}
+
+}
+
+
+service KeymanagerListagemService {
+
+  rpc listar(ChavePixClienteRequest) returns (ChavePixClienteResponse) {}
+
+}
+
+enum TipoConta{
+  DEFAULT_TIPO_CONTA = 0;
+  CONTA_CORRENTE = 1;
+  CONTA_POUPANCA = 2;
+}
+enum TipoChave{
+  DEFAULT_TIPO_CHAVE = 0;
+  CPF = 1;
+  TELEFONE = 2;
+  EMAIL = 3;
+  ALEATORIA = 4;
+
+}
+message NovaChavePixRequest{
+  string indentificadorCliente = 1;
+  TipoChave tipoChave = 2;
+  string valorChave = 3;
+  TipoConta tipoConta = 4;
+}
+message ChavePixResponse{
+  string identificadorCliente = 1;
+  string indentificadorPix = 2;
+}
+
+message ChavePixExistenteRequest{
+  string identificadorCliente = 1;
+  string indentificadorPix = 2;
+}
+
+message ChavePixExistenteResponse{
+  string ok = 1;
+}
+message ChavePixDetalhesRequest{
+  ChavePixResponse identificadoresChave = 1;
+  string valorChavePix = 2;
+}
+
+message Titular{
+  string nome = 1;
+  string cpf = 2;
+}
+message ContaVinculada{
+  string nomeInstituicaoFinanceira = 1;
+  string agencia = 2;
+  string numeroConta = 3;
+  TipoConta tipoConta = 4;
+  string ispb = 5;
+}
+message ChavePixDetalhesResponse{
+  ChavePixResponse identificadoresChave = 1;
+  TipoChave tipoChave = 2;
+  string valorChave = 3;
+  Titular titular = 4;
+  ContaVinculada contaVinculada = 5;
+  string criadoEm = 6;
+}
+
+message ChavePixClienteRequest{
+  string identificadorCliente = 1;
+}
+
+message ChavePixClienteResponse{
+
+  message ChavePixDetalhesClienteResponse{
+
+    TipoChave tipoChave = 1;
+    string valorChave = 2;
+    TipoConta tipoConta = 3;
+    string identificadorPix = 4;
+    google.protobuf.Timestamp criadoEm = 5;
+  }
+
+  string identificadorCliente = 1;
+  repeated ChavePixDetalhesClienteResponse chavePixDetalhesClienteResponse = 2;
+}
