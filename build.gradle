@@ -40,6 +40,12 @@ dependencies {
     implementation("io.micronaut.beanvalidation:micronaut-hibernate-validator")
     implementation("org.hibernate:hibernate-validator:6.1.6.Final")
 
+    //testes
+    kaptTest "io.micronaut:micronaut-inject-java"
+    testImplementation("org.mockito:mockito-core")
+    testImplementation("org.mockito:mockito-inline:3.8.0")
+    testImplementation("org.mockito:mockito-junit-jupiter:3.8.0")
+
 }
 
 
