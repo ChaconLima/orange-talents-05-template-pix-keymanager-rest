@@ -1,4 +1,4 @@
-package br.com.mateuschacon.keymanager.rest.cadastro.pix
+package br.com.mateuschacon.keymanager.rest.enums
 
 import org.hibernate.validator.internal.constraintvalidators.hv.EmailValidator
 import org.hibernate.validator.internal.constraintvalidators.hv.br.CPFValidator

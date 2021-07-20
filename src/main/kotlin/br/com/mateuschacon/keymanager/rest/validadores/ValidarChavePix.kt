@@ -1,7 +1,6 @@
 package br.com.mateuschacon.keymanager.rest
 
 import br.com.mateuschacon.keymanager.rest.cadastro.pix.NovaChavePixRequest
-import br.com.mateuschacon.keymanager.rest.cadastro.pix.TipoChaveEnum
 import javax.inject.Singleton
 import javax.validation.Constraint
 import javax.validation.ConstraintValidator

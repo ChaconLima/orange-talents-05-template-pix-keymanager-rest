@@ -1,6 +1,6 @@
 package br.com.mateuschacon.keymanager.rest.validacao
 
-import br.com.mateuschacon.keymanager.rest.cadastro.pix.TipoChaveEnum
+import br.com.mateuschacon.keymanager.rest.enums.TipoChaveEnum
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Nested

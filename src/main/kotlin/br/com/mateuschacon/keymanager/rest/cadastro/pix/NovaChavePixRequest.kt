@@ -4,9 +4,10 @@ import br.com.mateuschacon.keymanager.grpc.NovaChavePixRequest
 import br.com.mateuschacon.keymanager.grpc.TipoChave
 import br.com.mateuschacon.keymanager.grpc.TipoConta
 import br.com.mateuschacon.keymanager.rest.ValidarChavePix
+import br.com.mateuschacon.keymanager.rest.enums.TipoChaveEnum
+import br.com.mateuschacon.keymanager.rest.enums.TipoContaEnum
 import io.micronaut.core.annotation.Introspected
 import java.util.*
-import javax.validation.constraints.NotBlank
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
@@ -21,7 +22,7 @@ data class NovaChavePixRequest(
     @field:Size(max = 77)
     val valorChave: String?,
 
-     @field:NotNull
+    @field:NotNull
     val tipoConta: TipoContaEnum?
 
 ) {

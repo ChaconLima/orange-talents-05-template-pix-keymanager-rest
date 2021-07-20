@@ -1,7 +1,5 @@
 package br.com.mateuschacon.keymanager.rest.validacao
 
-import br.com.mateuschacon.keymanager.rest.cadastro.pix.TipoChaveEnum
-import br.com.mateuschacon.keymanager.rest.cadastro.pix.TipoContaEnum
 import br.com.mateuschacon.keymanager.rest.validadores.GlobalExceptionHandler
 import io.grpc.Status
 import io.grpc.StatusRuntimeException
@@ -11,7 +9,6 @@ import io.micronaut.http.hateoas.JsonError
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import java.util.*
 
 @MicronautTest(transactional = false)
 internal class GlobalExceptionHandlerTest {

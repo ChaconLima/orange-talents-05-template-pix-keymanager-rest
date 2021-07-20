@@ -1,4 +1,4 @@
-package br.com.mateuschacon.keymanager.rest.cadastro.pix
+package br.com.mateuschacon.keymanager.rest.enums
 
 enum class TipoContaEnum {
     DEFAULT_TIPO_CONTA,

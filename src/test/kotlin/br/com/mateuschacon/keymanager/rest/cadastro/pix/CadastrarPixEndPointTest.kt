@@ -4,24 +4,20 @@ import br.com.mateuschacon.keymanager.grpc.*
 import br.com.mateuschacon.keymanager.grpc.NovaChavePixRequest
 import br.com.mateuschacon.keymanager.rest.cadastro.pix.NovaChavePixRequest as Request
 import br.com.mateuschacon.keymanager.rest.cliente.grpc.KeyManagerGrpcFactory
-import io.grpc.Status
-import io.grpc.StatusRuntimeException
+import br.com.mateuschacon.keymanager.rest.enums.TipoChaveEnum
+import br.com.mateuschacon.keymanager.rest.enums.TipoContaEnum
 import io.micronaut.context.annotation.Factory
 import io.micronaut.context.annotation.Replaces
 import io.micronaut.http.HttpRequest
-import io.micronaut.http.HttpResponse
 import io.micronaut.http.HttpStatus
 import io.micronaut.http.client.HttpClient
 import io.micronaut.http.client.annotation.Client
 import io.micronaut.http.client.exceptions.HttpClientResponseException
-import io.micronaut.http.exceptions.HttpException
 import io.micronaut.test.extensions.junit5.annotation.MicronautTest
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
-import org.mockito.BDDMockito.given
 import javax.inject.Inject
 import org.mockito.Mockito
 import org.mockito.Mockito.`when`
