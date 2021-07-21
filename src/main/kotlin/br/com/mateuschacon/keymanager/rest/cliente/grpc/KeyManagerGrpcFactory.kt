@@ -1,6 +1,7 @@
 package br.com.mateuschacon.keymanager.rest.cliente.grpc
 
 import br.com.mateuschacon.keymanager.grpc.KeymanagerDetalhamentoServiceGrpc
+import br.com.mateuschacon.keymanager.grpc.KeymanagerListagemServiceGrpc
 import br.com.mateuschacon.keymanager.grpc.KeymanagerRegistraServiceGrpc
 import br.com.mateuschacon.keymanager.grpc.KeymanagerRemoverServiceGrpc
 import io.grpc.ManagedChannel
@@ -22,4 +23,6 @@ class KeyManagerGrpcFactory(
     @Singleton
     fun detalharChavePix() = KeymanagerDetalhamentoServiceGrpc.newBlockingStub(channel)
 
+    @Singleton
+    fun listagemChavePix() = KeymanagerListagemServiceGrpc.newBlockingStub(channel)
 }
